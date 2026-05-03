@@ -335,12 +335,40 @@ section {
     font-size: 1rem;
 }
 
+/* Works Section */
+.works {
+    background: var(--dark-bg);
+}
+
+/* Brand Section */
+.brand-section {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
 /* Design Icons Grid */
 .design-icons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    justify-items: center;
 }
 
 .design-icon-btn {
@@ -356,6 +384,8 @@ section {
     color: var(--text-primary);
     font-family: 'Cairo', sans-serif;
     text-decoration: none;
+    width: 100%;
+    max-width: 200px;
 }
 
 .design-icon-btn:hover {
@@ -432,18 +462,62 @@ section {
 }
 
 /* Responsive adjustments for icons */
+@media (max-width: 1024px) {
+    .design-icons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .design-icons-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem 0.5rem;
     }
     
     .design-icon-btn {
         padding: 1rem;
+        max-width: 100%;
     }
     
     .design-icon-btn .icon {
         font-size: 2rem;
+    }
+
+    .design-icon-btn .label {
+        font-size: 1rem;
+    }
+
+    .brand-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .design-icons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .design-icon-btn {
+        padding: 0.75rem 0.5rem;
+        max-width: 100%;
+    }
+
+    .design-icon-btn .label {
+        font-size: 0.9rem;
+    }
+
+    .brand-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .brand-section {
+        margin-bottom: 2.5rem;
     }
 }
 
@@ -747,6 +821,10 @@ section {
     .work-images {
         grid-template-columns: 1fr;
     }
+
+    .container {
+        padding: 0 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -766,6 +844,14 @@ section {
 
     .section-title {
         font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    section {
+        padding: 60px 0;
     }
 }
 
